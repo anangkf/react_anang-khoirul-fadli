@@ -12,6 +12,13 @@ const capitalizeName = (firstName, lastName) =>{
     return `${firstName} ${lastName}`;
 }
 
+const upperName = (firstName, lastName) =>{
+    firstName = firstName.toUpperCase();
+    lastName = lastName.toUpperCase();
+
+    return `${firstName} ${lastName}`;
+}
+
 const greeting = (fullName) =>{
     return (`Hi, ${fullName}!`);
 }
