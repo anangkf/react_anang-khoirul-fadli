@@ -24,3 +24,5 @@ const greeting = (fullName) =>{
 }
 
 console.log(greeting(getfullName(firstName, lastName)));
+console.log(greeting(capitalizeName(firstName, lastName)));
+console.log(greeting(upperName(firstName, lastName)));
