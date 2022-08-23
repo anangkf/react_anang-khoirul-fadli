@@ -1,5 +1,5 @@
-const firstName = "Andrew";
-const lastName = "Robertson";
+const firstName = "andrew";
+const lastName = "robertson";
 
 const getfullName = (firstName, lastName) =>{
     return `${firstName} ${lastName}`;
