@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <h1>Sign Up Form</h1>
+
+    <form action="welcome.html">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" required><br><br>
+        
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" required><br><br>
+
+        Gender: <br>
+        <input type="radio" value="Male" id="male">
+        <label for="male">Male</label><br>
+        <input type="radio" value="Female" id="female">
+        <label for="female">Female</label><br>
+        <input type="radio" value="Other" id="other">
+        <label for="other">Other</label>
+        <br>
+        <br>
+
+        <label for="nationality">Nationality:</label><br>
+        <select name="nationality" id="nationality">
+            <option value="indonesia">Indonesia</option>
+            <option value="malaysia">Malaysia</option>
+            <option value="singapore">Singapore</option>
+            <option value="thailand">Thailand</option>
+            <option value="vietnam">Vietnam</option>
+        </select><br><br>
+
+        Language Spoken: <br>
+        <input type="checkbox" name="bahasa" id="bahasa">
+        <label for="bahasa">Bahasa Indonesia</label><br>
+        <input type="checkbox" name="english" id="english">
+        <label for="english">English</label><br>
+        <input type="checkbox" name="other" id="otherLang">
+        <label for="otherLang">Other</label><br><br>
+
+        Bio: <br>
+        <textarea name="bio" id="bio" cols="40" rows="8"></textarea><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
