@@ -1,4 +1,4 @@
-##  HTML
+##  CSS
 
 CSS adalah singkatan dari _cascading style sheets_, yaitu bahasa yang digunakan untuk menentukan tampilan dan format halaman website. Dengan CSS, Anda bisa mengatur jenis font, warna tulisan, dan latar belakang halaman.
 
