@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    height: 28px;
+}
+
+nav ul li{
+    display: inline;
+    height: 36px;
+    float: right;
+    padding: 0px 10px;
+}
+
+nav ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+body{
+    background-image: url(../img/sample-pattern.png);
+    background-repeat: repeat;
+    height: 83vh;
+    overflow: auto;
+}
+
+body main{
+    padding: 24px 0 48px 0;
+}
+
+main header h1{
+    display: flex;
+    justify-content: center;
+}
+
+.post-container{
+    background-color: white;
+    margin: 20px auto;
+    width: 60%; 
+}
+
+.post-item{
+    background-color: white;
+    padding: 30px 40px 30px 20px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.post-item header h3{
+    color: dodgerblue;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 8.5vh;
+}
+
+footer p{
+    color: white;
+}
