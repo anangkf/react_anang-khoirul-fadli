@@ -1,7 +1,7 @@
 import '../asset/css/bootstrap.min.css'
 import '../asset/css/main.css'
-import logoatas from '../asset/img/logo-ALTA@2x.png'
-import fotoprofil from '../asset/img/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg'
+import LogoAtas from '../asset/img/logo-ALTA@2x.png'
+import FotoProfil from '../asset/img/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg'
 
 const Home = () =>{
     
@@ -15,7 +15,7 @@ const Home = () =>{
                   <a href="index.html">
                     <img 
                         className="logo-atas" 
-                        src={logoatas}
+                        src={LogoAtas}
                         alt="logo-atas"
                     />
                   </a>
@@ -40,7 +40,7 @@ const Home = () =>{
               <img 
                 id="foto-profil" 
                 alt="foto-profil"
-                src={fotoprofil}
+                src={FotoProfil}
               />
             </div>
             <div className="col-lg-8 col-md-12 col-sm-12 col-12">
