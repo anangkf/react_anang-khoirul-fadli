@@ -1,9 +1,12 @@
 import { Home } from './pages/Home';
+import { PathRoutes } from './PathRoutes'
 
 function App() {
   return (
     <>
-      <Home />
+      <PathRoutes>
+        <Home />
+      </PathRoutes>
     </>
   );
 }
