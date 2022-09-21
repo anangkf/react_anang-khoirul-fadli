@@ -72,9 +72,7 @@ export const TodoList = () =>{
                 handleModalTrigger={handleModalTrigger}
                 modalTrigger={modalTrigger}
             />
-            {modalTrigger && <FormModal 
-                todos={todos}
-                currentID={currentID}
+            {modalTrigger && <FormModal
                 handleModalTrigger={handleModalTrigger}
                 handleSubmit={handleSubmit}
             />}
