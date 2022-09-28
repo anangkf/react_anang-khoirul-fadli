@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.main-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar{
   background-color: #0bb;
   color: white;
@@ -34,11 +39,44 @@
   border-radius: 40px;
 }
 
+.sidebar{
+  position: absolute;
+  width: 25%;
+  top: 55px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(235, 252, 80);
+}
+
+.navlink{
+  display: block;
+  padding: 20px;
+  width: 100%;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 600;
+  color: #004;
+}
+
+.navlink-active{
+  display: block;
+  padding: 20px;
+  width: 100%;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 600;
+  color: #004;
+  background-color: rgb(208, 228, 26);
+}
+
 .content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 0;
+  width: 75%;
   height: 90vh;
   color: black;
 }

@@ -8,7 +8,8 @@ const MainRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route path='/quick-start' element={<Home />} />
+          <Route path='/redux-app-structure' element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>
