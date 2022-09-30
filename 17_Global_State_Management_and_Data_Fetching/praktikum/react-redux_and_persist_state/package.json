@@ -1,5 +1,5 @@
 {
-  "name": "react-routing",
+  "name": "react-redux_and_persist_state",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
