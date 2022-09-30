@@ -1,18 +1,20 @@
 import React from "react";
-import { useState } from "react";
 import '../main.css';
 import { Icon } from '@iconify/react';
 import TodoLogo from '../assets/img/todo-logo.png';
 import { Header } from "../components/Header";
-import { TodoList } from "../components/TodoList";
 import { Sidebar } from "../components/Sidebar";
+import { TodoList } from "../components/TodoList";
+import { useSelector, useDispatch } from "react-redux";
+import {toggleSidebar} from '../store/sidebar/sidebarSlice'
 
 export const Home = () =>{
-    const [sidebarTrigger, setSidebarTrigger] = useState(false);
+    const dispatch = useDispatch()
+    const sidebarTrigger = useSelector(state => state.sidebar) 
 
-    const toggleSidebar = (e) =>{
+    const handleSidebar = (e) =>{
         e.preventDefault();
-        setSidebarTrigger(!sidebarTrigger);
+        dispatch(toggleSidebar())
     }
 
     const homeNav = [
@@ -28,13 +30,13 @@ export const Home = () =>{
 
     return(
         <>
-        <button className="btn-trigger" onClick={toggleSidebar}>
+        <button className="btn-trigger" onClick={handleSidebar}>
             <Icon icon='fa6-solid:bars' width='60' height='40' />
         </button>
         {<Sidebar 
             data={homeNav}
             sidebarTrigger={sidebarTrigger} 
-            toggleSidebar={toggleSidebar}
+            handleSidebar={handleSidebar}
         />}
         <div className="container">
             <div className="header">

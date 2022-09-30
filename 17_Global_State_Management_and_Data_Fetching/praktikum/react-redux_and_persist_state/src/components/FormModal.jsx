@@ -1,11 +1,24 @@
 import TodoList from "../TodoList.module.css";
+import { handleSubmit } from "../store/todos/todosSlice";
+import { handleModalTrigger } from "../store/modal/modalSlice";
+import { useDispatch } from "react-redux";
 
-export const FormModal = (props) =>{
-    const {handleModalTrigger, handleSubmit} = props;
+export const FormModal = () =>{
+    const dispatch = useDispatch();
+
+    const getFormData = (e) =>{
+        e.preventDefault()
+        const formData = new FormData(e.target);
+        const title = formData.get("title");
+        const description = formData.get("description");
+        
+        dispatch(handleSubmit({title, description}))
+        dispatch(handleModalTrigger())
+    }
     return(
         <div className={TodoList.modal}>
             <header>Add Todo</header>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={getFormData}>
                 <table>
                     <tr>
                         <td>
@@ -26,7 +39,7 @@ export const FormModal = (props) =>{
                     </tr>
                 </table>
                 <div className={TodoList.modalAction}>
-                    <button onClick={handleModalTrigger}>Cancel</button>
+                    <button onClick={() => dispatch(handleModalTrigger())}>Cancel</button>
                     <button type="submit">Add</button>
                 </div>
             </form>

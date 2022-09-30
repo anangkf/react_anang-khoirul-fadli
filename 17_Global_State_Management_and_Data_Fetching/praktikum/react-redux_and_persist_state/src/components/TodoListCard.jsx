@@ -1,7 +1,10 @@
 import TodoList from '../TodoList.module.css';
+import { onCheck, handleDelete } from '../store/todos/todosSlice';
+import {useDispatch} from 'react-redux'
 
 export const TodoListCard = (props) =>{
-    const {data, status, onCheck, handleDelete} = props;
+    const dispatch = useDispatch();
+    const {data, status} = props;
     
     return(
             <div className={!status ? TodoList.card : `${TodoList.card} ${TodoList.completed}`}>
@@ -14,11 +17,11 @@ export const TodoListCard = (props) =>{
                     <div className={TodoList.action}>
                             <label className={TodoList.checkbox}>
                                 {!status &&
-                                    <input onChange={() =>onCheck(data.id)} type="checkbox" name="" id="" 
+                                    <input onChange={() =>dispatch(onCheck(data.id))} type="checkbox" name="" id="" 
                                 />}
                                 {!status ? 'Mark as Done' : 'Completed'}
                             </label>
-                        <button onClick={() => handleDelete(data.id)}>Delete</button>
+                        <button onClick={() => dispatch(handleDelete(data.id))}>Delete</button>
                     </div>
                 </body>
             </div>
