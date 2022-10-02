@@ -1,0 +1,146 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+.btn-trigger{
+  position: absolute;
+  margin: 20px 30px;
+  padding: 7px 10px;
+  border-radius: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px .5px #312d2d);
+}
+
+.sidebar{
+  width: 30vw;
+  min-height:100%;
+  background-color: rgb(233, 79, 131);
+  position: absolute;
+  top : 0;
+  left: -80vh;
+  transition: ease 1s;
+}
+
+.sidebar-active{
+  width: 30vw;
+  min-height:100%;
+  background-color: rgb(230, 62, 62);
+  position: fixed;
+  top : 0;
+  bottom: 0;
+  left: 0;
+  transition: ease 1s;
+}
+
+nav{
+  margin-top: 100px;
+  width: 100%;
+}
+
+nav ul li{
+  list-style: none;
+  padding: 15px 40px;
+}
+
+nav ul li:hover{
+  /* list-style: none;
+  padding: 15px 20px; */
+  background-color: #8cd4eb;
+  transition: ease 1s;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-size: x-large;
+  color: black;
+}
+
+.container{
+  width: 80%;
+  padding-top: 16vh;
+  margin: 0 auto;
+  background-color: beige;
+}
+
+.h-full{
+  height: 100vh;
+}
+
+.heading{
+  text-align: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.content{
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.header{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo{
+  height: 8vh;
+  margin: 0 24px;
+}
+
+.header-title{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title h1{
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.header-title p{
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.not-found-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.not-found-icon{
+  margin: auto;
+  width: 25%;
+}
+
+.button{
+  padding: 7px 10px;
+  margin: 18px 0;
+  width: max-content;
+  align-self: center;
+  border-radius: 40px;
+  border: none;
+  background-color: #8cd4eb;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px .5px #312d2d);
+}
+
+.button a{
+  text-decoration: none;
+  color: black
+}
+
+@import url(
+  'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
+);
