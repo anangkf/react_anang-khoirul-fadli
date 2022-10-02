@@ -1,9 +1,9 @@
-import { PathRoutes } from './PathRoutes'
+import { SetupRouter } from './routes';
 
 function App() {
   return (
     <>
-      <PathRoutes />
+      <SetupRouter />
     </>
   );
 }
