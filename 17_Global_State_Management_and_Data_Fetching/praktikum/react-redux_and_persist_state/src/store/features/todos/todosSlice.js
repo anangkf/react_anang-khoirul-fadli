@@ -1,5 +1,5 @@
 import {createSlice } from '@reduxjs/toolkit'
-import { mockTodos } from '../../mock/mockTodos'
+import { mockTodos } from '../../../mock/mockTodos'
 
 const initialState = mockTodos;
 

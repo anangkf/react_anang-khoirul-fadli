@@ -10,9 +10,9 @@ import {
     REGISTER,
   } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // save to localStorage for web
-import todosReducer from './todos/todosSlice'
-import modalReducer from './modal/modalSlice'
-import sidebarReducer from './sidebar/sidebarSlice'
+import todosReducer from './features/todos/todosSlice'
+import modalReducer from './features/modal/modalSlice'
+import sidebarReducer from './features/sidebar/sidebarSlice'
 
 const rootReducer = combineReducers({
     todos: todosReducer,

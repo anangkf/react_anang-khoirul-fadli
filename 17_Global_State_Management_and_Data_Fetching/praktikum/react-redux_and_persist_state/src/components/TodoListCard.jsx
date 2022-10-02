@@ -1,5 +1,5 @@
 import TodoList from '../TodoList.module.css';
-import { onCheck, handleDelete } from '../store/todos/todosSlice';
+import { onCheck, handleDelete } from '../store/features/todos/todosSlice';
 import {useDispatch} from 'react-redux'
 
 export const TodoListCard = (props) =>{

@@ -1,5 +1,5 @@
 import TodoList from "../TodoList.module.css"
-import { handleModalTrigger } from "../store/modal/modalSlice";
+import { handleModalTrigger } from "../store/features/modal/modalSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export const TodoUtils = (props) =>{

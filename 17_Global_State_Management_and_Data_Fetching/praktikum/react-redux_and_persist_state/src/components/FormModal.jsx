@@ -1,6 +1,6 @@
 import TodoList from "../TodoList.module.css";
-import { handleSubmit } from "../store/todos/todosSlice";
-import { handleModalTrigger } from "../store/modal/modalSlice";
+import { handleSubmit } from "../store/features/todos/todosSlice";
+import { handleModalTrigger } from "../store/features/modal/modalSlice";
 import { useDispatch } from "react-redux";
 
 export const FormModal = () =>{
