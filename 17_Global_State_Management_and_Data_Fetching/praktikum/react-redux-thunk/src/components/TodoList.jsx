@@ -4,14 +4,19 @@ import { TodoUtils } from './TodoUtils';
 import { FormModal } from './FormModal';
 
 import { useState } from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react';
+import { fetchTodo } from '../store/features/todos/todosSlice';
 
 export const TodoList = () =>{
-    const todos = useSelector(state => state.todos)
+    const dispatch = useDispatch()
+    const todos = useSelector(state => state.todos.data)
     const modalTrigger = useSelector(state => state.modal)
 
     const [keyword, setKeyword] = useState('');
-
+    useEffect(() =>{
+        dispatch(fetchTodo())
+    },[])
     const data = todos.filter(item =>{
         if(!keyword){
             return item
