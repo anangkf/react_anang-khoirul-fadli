@@ -12,6 +12,11 @@ const Sidebar = () => {
             key: 'redux-app-structure',
             title: 'Redux App Structure',
             path: '/redux-app-structure'
+        },
+        {
+            key: 'todo-list',
+            title: 'Todo List',
+            path: '/todo-list'
         }
     ]
   return (
