@@ -1,9 +1,9 @@
 import TodoList from "../TodoList.module.css";
-import { handleSubmit } from "../store/features/todos/todosSlice";
+import { addTodo } from "../store/features/todos/todosSlice";
 import { handleModalTrigger } from "../store/features/modal/modalSlice";
 import { useDispatch } from "react-redux";
 
-export const FormModal = () =>{
+export const FormModal = ({handleFetchStatus}) =>{
     const dispatch = useDispatch();
 
     const getFormData = (e) =>{
@@ -12,7 +12,8 @@ export const FormModal = () =>{
         const title = formData.get("title");
         const description = formData.get("description");
         
-        dispatch(handleSubmit({title, description}))
+        dispatch(addTodo({title, description}))
+        handleFetchStatus()
         dispatch(handleModalTrigger())
     }
     return(

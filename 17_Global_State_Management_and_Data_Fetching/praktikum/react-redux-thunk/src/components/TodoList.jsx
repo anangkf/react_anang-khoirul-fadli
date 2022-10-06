@@ -13,26 +13,32 @@ export const TodoList = () =>{
     const todos = useSelector(state => state.todos.data)
     const modalTrigger = useSelector(state => state.modal)
 
+    const [fetchStatus, setFetchStatus] = useState(false);
     const [keyword, setKeyword] = useState('');
-    useEffect(() =>{
-        dispatch(fetchTodo())
-    },[])
+
+    const handleFetchStatus = () =>{
+        setFetchStatus(!fetchStatus)
+    }
     const data = todos.filter(item =>{
         if(!keyword){
             return item
         }else if(
             item.title
-                .toLowerCase()
-                .includes(keyword)
+            .toLowerCase()
+            .includes(keyword)
         ){
             return item
         }
     })
-
+    
     const handleSearch = (e) =>{
         const input = e.target.value.toLowerCase();
         setKeyword(input)
     }
+    
+    useEffect(() =>{
+        dispatch(fetchTodo())
+    },[fetchStatus])
 
     return(
         <>
@@ -40,7 +46,7 @@ export const TodoList = () =>{
                 handleSearch={handleSearch}
                 modalTrigger={modalTrigger}
             />
-            {modalTrigger && <FormModal />}
+            {modalTrigger && <FormModal handleFetchStatus={handleFetchStatus}/>}
             <div className={TodoListStyle.container}>
                 {data.map(item =>{
                     const {id, completed} = item;

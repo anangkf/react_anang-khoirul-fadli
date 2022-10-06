@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { axiosInstance } from '../configs/axiosInstance';
 
 const APITodo = {
@@ -6,7 +5,15 @@ const APITodo = {
         try{
             const res = await axiosInstance.get('/todo')
             return res
-            // console.log(res)
+        }catch(err){
+            console.log(err.message)
+        }
+    },
+
+    async addTodo(data){
+        try{
+            const res = await axiosInstance.post('/todo',data)
+            return res
         }catch(err){
             console.log(err.message)
         }
