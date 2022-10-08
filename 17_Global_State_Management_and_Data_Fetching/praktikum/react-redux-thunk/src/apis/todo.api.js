@@ -17,6 +17,20 @@ const APITodo = {
         }catch(err){
             console.log(err.message)
         }
+    },
+
+    async completeTodo(data){
+        try{
+            const res = await axiosInstance.patch(`/todo/${data}`, {
+                id: data,
+                completed: true
+            })
+            return res
+        }catch(err){
+            console.log(err.response)
+        }
+    },
+
     }
 }
 

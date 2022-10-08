@@ -17,7 +17,7 @@ export const TodoListCard = (props) =>{
                     <div className={TodoList.action}>
                             <label className={TodoList.checkbox}>
                                 {!status &&
-                                    <input onChange={() =>dispatch(onCheck(data.id))} type="checkbox" name="" id="" 
+                                    <input onChange={() =>dispatch(completeTodo(data.id))} type="checkbox" name="" id="" 
                                 />}
                                 {!status ? 'Mark as Done' : 'Completed'}
                             </label>

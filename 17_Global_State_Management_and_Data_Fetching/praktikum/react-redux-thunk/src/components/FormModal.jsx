@@ -3,7 +3,7 @@ import { addTodo } from "../store/features/todos/todosSlice";
 import { handleModalTrigger } from "../store/features/modal/modalSlice";
 import { useDispatch } from "react-redux";
 
-export const FormModal = ({handleFetchStatus}) =>{
+export const FormModal = () =>{
     const dispatch = useDispatch();
 
     const getFormData = (e) =>{
@@ -13,7 +13,6 @@ export const FormModal = ({handleFetchStatus}) =>{
         const description = formData.get("description");
         
         dispatch(addTodo({title, description}))
-        handleFetchStatus()
         dispatch(handleModalTrigger())
     }
     return(

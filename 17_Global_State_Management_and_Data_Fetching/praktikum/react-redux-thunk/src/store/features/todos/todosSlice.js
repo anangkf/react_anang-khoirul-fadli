@@ -2,7 +2,8 @@ import {createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import APITodo from '../../../apis/todo.api';
 
 const initialState = {
-    data: []
+    data: [],
+    fetchStatus: false
 };
 
 export const fetchTodo = createAsyncThunk('fetch/todo', async () =>{
@@ -14,15 +15,26 @@ export const fetchTodo = createAsyncThunk('fetch/todo', async () =>{
     }
 })
 
-export const addTodo = createAsyncThunk('add/todo', ({title, description}) =>{
-    APITodo.addTodo({
-        data:{
-            title,
-            description
-        }
-    })
-    .then(res => console.log(res))
-    .catch(err => console.log(err.message))
+export const addTodo = createAsyncThunk('add/todo', async (data) =>{
+    try{
+        const res = await APITodo.addTodo({
+            data: data
+        })
+        return res.data.insert_todo_todo_one
+    }catch(err){
+        console.log(err.message)
+    }
+})
+
+export const completeTodo = createAsyncThunk('complete/todo', async (data) =>{
+    try{
+        const res = await APITodo.completeTodo(data)
+        return res
+    }catch(err){
+        console.log(err.message)
+    }
+})
+
 })
 
 export const todosSlice = createSlice({
@@ -33,18 +45,18 @@ export const todosSlice = createSlice({
             .addCase(fetchTodo.fulfilled, (state, action) =>{
                 state.data = action.payload;
             })
+            .addCase(addTodo.fulfilled, (state, action) =>{
+                state.data.unshift(action.payload)
+                state.fetchStatus = !state.fetchStatus
+            })
+            .addCase(completeTodo.fulfilled, (state) =>{
+                state.fetchStatus = !state.fetchStatus
+            })
+            .addCase(deleteTodo.fulfilled, (state) =>{
+                state.fetchStatus = !state.fetchStatus
+            })
     },
     reducers:{
-        onCheck: (state, action) =>{
-            const id = action.payload;
-            
-            state.data.filter(val =>{
-                if(val.id === id){
-                    return val.completed = !val.completed
-                }
-                return val
-            })
-        },
         handleDelete: (state, action) =>{
             const id = action.payload
             
