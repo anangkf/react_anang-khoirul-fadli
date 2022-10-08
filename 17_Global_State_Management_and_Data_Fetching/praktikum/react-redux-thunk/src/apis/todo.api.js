@@ -31,6 +31,13 @@ const APITodo = {
         }
     },
 
+    async deleteTodo(id){
+        try{
+            const res = await axiosInstance.delete(`todo/${id}`)
+            return res
+        }catch(err){
+            console.log(err.response.data)
+        }
     }
 }
 

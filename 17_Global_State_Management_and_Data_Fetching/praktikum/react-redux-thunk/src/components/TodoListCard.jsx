@@ -1,5 +1,5 @@
 import TodoList from '../TodoList.module.css';
-import { onCheck, handleDelete } from '../store/features/todos/todosSlice';
+import { completeTodo, deleteTodo } from '../store/features/todos/todosSlice';
 import {useDispatch} from 'react-redux'
 
 export const TodoListCard = (props) =>{
@@ -21,7 +21,7 @@ export const TodoListCard = (props) =>{
                                 />}
                                 {!status ? 'Mark as Done' : 'Completed'}
                             </label>
-                        <button onClick={() => dispatch(handleDelete(data.id))}>Delete</button>
+                        <button onClick={() => dispatch(deleteTodo(data.id))}>Delete</button>
                     </div>
                 </body>
             </div>

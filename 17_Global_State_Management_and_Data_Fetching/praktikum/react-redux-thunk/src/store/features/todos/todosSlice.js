@@ -35,6 +35,13 @@ export const completeTodo = createAsyncThunk('complete/todo', async (data) =>{
     }
 })
 
+export const deleteTodo = createAsyncThunk('delete/todo', async(id) =>{
+    try{
+        const res = await APITodo.deleteTodo(id)
+        return res
+    }catch(err){
+        console.log(err.response.data)
+    }
 })
 
 export const todosSlice = createSlice({
@@ -67,6 +74,6 @@ export const todosSlice = createSlice({
         },
     }
 })
-export const {onCheck, handleDelete, handleSubmit} = todosSlice.actions
+export const {onCheck, handleDelete, handleSubmit, handleFetchStatus} = todosSlice.actions
 
 export default todosSlice.reducer
