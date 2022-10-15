@@ -14,18 +14,6 @@ describe('FormCoding', () =>{
         const { container } = render(<FormCoding />);
 		expect(container).toMatchSnapshot();
     })
-  
-    it('renders FormCoding component', () =>{
-        render(<FormCoding />)
-        // screen.debug()
-        // expect(screen.getByText(/Pendaftaran Peserta Coding Bootcamp/)).toBeInTheDocument()
-        // expect(screen.getByLabelText(/Email/)).toBeInTheDocument()
-        // expect(screen.getByLabelText(/No Handphone/)).toBeInTheDocument()
-        // expect(screen.getByLabelText(/Latar Belakang Pendidikan/)).toBeInTheDocument()
-        // expect(screen.getByLabelText(/Kelas Coding yang Dipilih/)).toBeInTheDocument()
-        // expect(screen.getByLabelText(/Foto Surat Kesungguhan/)).toBeInTheDocument()
-        // expect(screen.getByLabelText(/Harapan Untuk Coding Bootcamp Ini/)).toBeInTheDocument()
-    })
     
     it('test each input to have expected values', () =>{
         render(<FormCoding />)

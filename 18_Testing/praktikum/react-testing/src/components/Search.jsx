@@ -33,7 +33,7 @@ export default function Search() {
       {stories.length > 0 && "Daftar Cerita"}
       <ul>
         {stories.map((story) => (
-          <li key={story.objectID}>
+          <li key={story.storyID}>
             {story.title} <button href={story.url}>Baca Selengkapnya</button>
           </li>
         ))}
