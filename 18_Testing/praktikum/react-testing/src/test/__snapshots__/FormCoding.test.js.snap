@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormCoding FormCoding SnapShots 1`] = `
+<div>
+  <h1
+    style="text-align: center;"
+  >
+    Pendaftaran Peserta Coding Bootcamp
+  </h1>
+  <form
+    class="centerForm"
+  >
+    <label>
+      Nama Lengkap:
+      <input
+        class="input"
+        name="nama"
+        required=""
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Email: 
+      <br />
+      <input
+        class="input"
+        name="email"
+        required=""
+        type="email"
+        value=""
+      />
+    </label>
+    <label>
+      No Handphone: 
+      <br />
+      <input
+        name="noHandphone"
+        required=""
+        type="number"
+        value=""
+      />
+    </label>
+    <label>
+      Latar Belakang Pendidikan: 
+      <br />
+      <input
+        name="pendidikan"
+        required=""
+        type="radio"
+        value="IT"
+      />
+      IT
+      <input
+        name="pendidikan"
+        type="radio"
+        value="Non IT"
+      />
+      Non IT
+    </label>
+    <br />
+    <label>
+      Kelas Coding yang Dipilih: 
+      <br />
+      <select
+        name="kelas"
+        required=""
+        type="text"
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Pilih Salah Satu Program
+        </option>
+        <option
+          value="golang"
+        >
+          Coding Backend with Golang
+        </option>
+        <option
+          value="reactjs"
+        >
+          Coding Frontend with ReactJS
+        </option>
+        <option
+          value="fullstack"
+        >
+          Fullstack Developer
+        </option>
+      </select>
+    </label>
+    <label>
+      Foto Surat Kesungguhan:
+      <input
+        name="suratKesungguhan"
+        required=""
+        type="file"
+      />
+    </label>
+    <label>
+      Harapan Untuk Coding Bootcamp Ini: 
+      <br />
+      <textarea
+        name="harapan"
+        type="text"
+      />
+    </label>
+    <ul />
+    <br />
+    <br />
+    <input
+      type="submit"
+      value="Submit"
+    />
+    <button
+      class="buttonReset"
+    >
+      Reset
+    </button>
+  </form>
+</div>
+`;
