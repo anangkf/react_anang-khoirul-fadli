@@ -1,0 +1,42 @@
+{
+    "data": {
+      "results": [
+        {
+          "id": 1,
+          "nama": "Budi",
+          "keterangan": [
+            {
+              "pelajaran": "Sistem Informasi"
+            },
+            {
+              "pelajaran": "React"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "nama": "Sita",
+          "keterangan": [
+            {
+              "pelajaran": "Sistem Informasi"
+            },
+            {
+              "pelajaran": "React"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "nama": "Angga",
+          "keterangan": [
+            {
+              "pelajaran": "Sistem Informasi"
+            },
+            {
+              "pelajaran": "React"
+            }
+          ]
+        }
+      ]
+    }
+  }

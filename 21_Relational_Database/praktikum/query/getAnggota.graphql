@@ -1,0 +1,9 @@
+query getAnggota {
+  results :kampus_merdeka_anggota {
+    id
+    keterangan {
+      pelajaran
+    }
+    nama
+  }
+}
