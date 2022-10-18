@@ -1,0 +1,24 @@
+{
+  "query": mutation insertKeterangan($id_anggota: Int!, $nilai: Int, $pelajaran: String, $status: Boolean) {
+    insert_kampus_merdeka_keterangan_one(object: {id_anggota: $id_anggota, nilai: $nilai, pelajaran: $pelajaran, status: $status,}) {
+      id
+      id_anggota
+      nilai
+      pelajaran
+      status
+    }
+  },
+
+  "query_variables1": {
+    "id_anggota": 3, 
+    "nilai": 90, 
+    "pelajaran": "Sistem Informasi", 
+    "status": true
+  },
+
+  "query_variables2": {
+    "id_anggota": 3, 
+    "nilai": 55, 
+    "pelajaran": "React", 
+    "status": false
+  }}
