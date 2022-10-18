@@ -1,0 +1,3 @@
+[submodule "22_GraphQL_Query_and_Apollo_Client/praktikum/GrapQL_Query_task_starter"]
+	path = 22_GraphQL_Query_and_Apollo_Client/praktikum/GrapQL_Query_task_starter
+	url = https://github.com/muhammad-muchson/GrapQL_Query_task_starter.git
