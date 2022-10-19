@@ -1,0 +1,66 @@
+{
+    "data": {
+      "results": [
+        {
+          "id": 1,
+          "anggota": {
+            "id": 1,
+            "nama": "Budi"
+          },
+          "nilai": 85,
+          "pelajaran": "Sistem Informasi",
+          "status": true
+        },
+        {
+          "id": 3,
+          "anggota": {
+            "id": 2,
+            "nama": "Sita"
+          },
+          "nilai": 90,
+          "pelajaran": "Sistem Informasi",
+          "status": true
+        },
+        {
+          "id": 5,
+          "anggota": {
+            "id": 3,
+            "nama": "Angga"
+          },
+          "nilai": 90,
+          "pelajaran": "Sistem Informasi",
+          "status": true
+        },
+        {
+          "id": 2,
+          "anggota": {
+            "id": 1,
+            "nama": "Budi"
+          },
+          "nilai": 65,
+          "pelajaran": "React",
+          "status": true
+        },
+        {
+          "id": 4,
+          "anggota": {
+            "id": 2,
+            "nama": "Sita"
+          },
+          "nilai": 50,
+          "pelajaran": "React",
+          "status": true
+        },
+        {
+          "id": 6,
+          "anggota": {
+            "id": 3,
+            "nama": "Angga"
+          },
+          "nilai": 55,
+          "pelajaran": "React",
+          "status": true
+        }
+      ]
+    }
+  }
