@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- connecting bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+        .hero{
+            background-image: url(assets/hero.jpg);
+            background-size: cover;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light py-3">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-bold fs-3" href="#">Travel Star</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#contact-us">Contact us</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- hero -->
+        <div class="position-relative overflow-hidden hero p-3 p-md-5 text-center" style="height: 89vh;">
+            <div class="col-md-7 p-lg-5 mx-auto my-5">
+              <h1 class="display-4 fw-normal text-dark">Holidays without limits!</h1>
+              <p class="lead fw-normal text-light">It's August again and it's time for you to plan your next vacation! This year we will provide an overview of the cheapest holiday destinations in Europe - both in terms of flights and accommodation!</p>
+              <a class="btn btn-outline-light" href="#">Travel now!</a>    
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+        <!-- contact us -->
+        <div class="container d-flex align-items-center" style="height: 100vh;" id="contact-us">
+            <div class="row g-5">
+              <div class="col-md-5 col-lg-4">
+                <h2>Contact Us</h2>
+                <p class="lead my-3">Need to get in touch with us? Either fill out the form with your inquiry or find the department email you'd like to contact below.</p>
+              </div>
+            <div class="col-md-7 col-lg-8">
+              <!-- <h4 class="mb-3">Billing address</h4> -->
+              <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+      
+                  <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+      
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                      Please enter a valid email address for shipping updates.
+                    </div>
+                  </div>
+      
+                  <div class="col-12">
+                      <label class="form-label">What can we help you with?</label>
+                      <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px"></textarea>
+                  </div>
+      
+                <button class="w-100 btn btn-primary btn-lg" type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="pt-5 px-5 bg-dark text-light text-small">
+        <div class="row d-flex align-items-baseline justify-content-between">
+            <div class="col-5">
+                <h3>Travel Star</h3>
+                <p>
+                    We are bringing joy to business travelers everywhere by finding the best flights for busy schedules and perfect hotels that suit personal preferences.
+                </p>
+                Get in touch with us!
+                <div class="col-3 d-flex justify-content-between">
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-youtube"></i>
+                    <i class="bi bi-facebook"></i>
+                </div>
+            </div>
+            
+            <div class="col-3">
+               <h5>Purwokerto, Indonesia</h5> 
+               <p>53144</p> 
+               <p>Perumahan Puri Indah, Blk. K - L No.36, Windusara, Karangklesem, Purwokerto Selatan</p> 
+               <p>0813-5557-7776</p> 
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <p class="mb-1 me-3">&copy; 2017–2022 Travel Star</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Privacy</a></li>
+              <li class="list-inline-item"><a href="#">Terms</a></li>
+              <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </div>
+      </footer>
+</body>
+</html>
