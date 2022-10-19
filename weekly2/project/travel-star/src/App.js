@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <div className="">
       <Navbar />
+      <main>
+        <Hero />
+      </main>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
