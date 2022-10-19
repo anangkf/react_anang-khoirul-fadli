@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ContactUs from './components/ContactUs';
+import AboutUs from './components/AboutUs';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <AboutUs />
         <ContactUs />
       </main>
       {/* <header className="App-header">
