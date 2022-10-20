@@ -4,7 +4,6 @@ const APIUser = {
     async getAllUsers() {
         try{
             const res = await axiosInstance.get('/user')
-            console.log(res)
             return res
         }catch(err){
             console.log(err.response)
