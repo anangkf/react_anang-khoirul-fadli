@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import PersonImg from '../assets/img/person.jpg'
 import {useDispatch, useSelector} from 'react-redux'
 import { getUsers } from '../store/features/user/userSlice'
 
@@ -9,20 +8,28 @@ const Customers = () => {
   
   useEffect(() => {
     dispatch(getUsers())
-  }, [])
+  }, [dispatch])
   
   return (
-    <div className="container d-flex flex-column justify-content-center align-items-center" style={{height: '100vh'}} id="about-us">
+    <div className="container d-flex flex-column justify-content-evenly align-items-center" style={{minHeight: '100vh'}} id="about-us">
         <h2 className='fw-bold mb-4'>Our Customers</h2>
-        <figure className='figure mt-3 d-flex flex-column align-items-center'>
-            <img 
-                src={PersonImg} 
-                className="img-thumbnail rounded-circle float-start" 
-                style={{height: '200px', width: '200px', objectFit: 'cover'}} 
-                alt="person-in-charge">    
-            </img>
-            <figcaption className='figure-caption'>Dane Kyle Watterson - CEO of Travel Star</figcaption>
-        </figure>
+        <div className='container d-flex justify-content-center flex-wrap gap-3'>
+          {userList.map(user =>{
+            return(
+              <figure key={user.id} className='figure mt-3 mx-3 d-flex flex-column align-items-center'>
+                  <img 
+                      src={user.avatar} 
+                      className="img-thumbnail rounded-circle float-start" 
+                      style={{height: '200px', width: '200px', objectFit: 'cover'}} 
+                      alt="customer"
+                  >    
+                  </img>
+                  <figcaption className='figure-caption'>{user.name}</figcaption>
+              </figure>
+            )
+            })
+          }
+        </div>
     </div>
   )
 }
