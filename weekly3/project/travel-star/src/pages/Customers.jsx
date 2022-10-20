@@ -1,7 +1,9 @@
 import React from 'react'
 import PersonImg from '../assets/img/person.jpg'
 
+
 const Customers = () => {
+  
   return (
     <div className="container d-flex flex-column justify-content-center align-items-center" style={{height: '100vh'}} id="about-us">
         <h2 className='fw-bold mb-4'>Our Customers</h2>
