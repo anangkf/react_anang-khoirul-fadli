@@ -2,7 +2,7 @@ import ListItem from './ListItem';
 import {useQuery} from '@apollo/client'
 import { GET_PASSENGER_LIST } from '../configs/queries';
 
-const ListPassenger = ({ getPassengerByID, hapusPengunjung}) => {
+const ListPassenger = ({ getPassengerByID, deletePassenger}) => {
     
     const handleEdit = (id) =>{
         getPassengerByID({ variables: { id: id } });
@@ -23,7 +23,7 @@ const ListPassenger = ({ getPassengerByID, hapusPengunjung}) => {
                     <ListItem
                         key={item.id}
                         data={item}
-                        hapusPengunjung={hapusPengunjung}
+                        deletePassenger={deletePassenger}
                         handleEdit={handleEdit}
                     />
                 ))}

@@ -45,3 +45,14 @@ mutation MyMutation($jenisKelamin: String, $nama: String, $umur: Int) {
   }
 }    
 `;
+
+export const DELETE_PASSENGER = gql`
+mutation MyMutation($id: uuid!) {
+    results: delete_passengers_by_pk(id: $id) {
+      id
+      nama
+      umur
+      jenisKelamin
+    }
+  }
+`;
