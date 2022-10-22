@@ -1,6 +1,6 @@
 import ListItem from './ListItem';
 import {useSubscription} from '@apollo/client'
-import { GET_PASSENGER_LIST, SUBSCRIPTION } from '../configs/queries';
+import { SUBSCRIPTION } from '../configs/queries';
 
 const ListPassenger = ({ getPassengerByID, deletePassenger}) => {
     
@@ -9,7 +9,6 @@ const ListPassenger = ({ getPassengerByID, deletePassenger}) => {
     }
     
     const {data, error, loading} = useSubscription(SUBSCRIPTION)
-    // const {data, error, loading} = useQuery(GET_PASSENGER_LIST)
 
     return (
         <div>

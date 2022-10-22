@@ -1,25 +1,27 @@
-import {ApolloClient, InMemoryCache, split, HttpLink} from '@apollo/client'
-import {GraphQLWsLink} from '@apollo/client/link/subscriptions'
-import { createClient } from 'graphql-ws'
-import { getMainDefinition } from '@apollo/client/utilities'
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GraphQLWsLink } from "@apollo/client/link/subscriptions";
+import { createClient } from "graphql-ws";
+import { split, HttpLink } from "@apollo/client";
+import { getMainDefinition } from "@apollo/client/utilities";
 import CONST from '../utils/constants'
 
-const httpLink = new HttpLink(createClient({
+const httpLink = new HttpLink({
     uri: CONST.BASE_URL,
     headers:{
         'x-hasura-admin-secret': CONST.ADMIN_SECRET
     }
-}));
+});
+
 
 const wsLink = new GraphQLWsLink(createClient({
-    url: 'wss://pasenger-list.hasura.app/v1/graphql',
+    url: CONST.BASE_URL_WS,
     connectionParams:{
         headers:{
             'x-hasura-admin-secret': CONST.ADMIN_SECRET
         }
     }
 }));
-
+console.log(CONST)
 const splitLink = split(
     ({query}) =>{
         const definition = getMainDefinition(query);
