@@ -1,24 +1,14 @@
 import ListItem from './ListItem';
-import {gql, useQuery} from '@apollo/client'
+import {useQuery} from '@apollo/client'
+import { GET_PASSENGER_LIST } from '../configs/queries';
 
 const ListPassenger = ({ getPassengerByID, hapusPengunjung}) => {
-    
-    const GetPassengerList = gql`
-    query MyQuery {
-        results: passengers {
-          id
-          nama
-          umur
-          jenisKelamin
-        }
-      }
-      `;
     
     const handleEdit = (id) =>{
         getPassengerByID({ variables: { id: id } });
     }
 
-    const {data, error, loading} = useQuery(GetPassengerList)
+    const {data, error, loading} = useQuery(GET_PASSENGER_LIST)
 
     return (
         <div>
