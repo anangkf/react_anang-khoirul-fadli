@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./Home.css"
 
-function PassengerInput({data, updatePassenger, tambahPengunjung}) {
+function PassengerInput({data, updatePassenger, addPassenger}) {
   
   const passengerDetails = data?.results[0];
 
@@ -34,14 +34,16 @@ function PassengerInput({data, updatePassenger, tambahPengunjung}) {
       const {nama, umur, jenisKelamin} = state
       if (umur >= 75 || umur <= 12) {
         alert("Umur tidak sesuai")
-      } else if(passengerDetails) {
+      } else if(state) {
         // const newData = {
         //   nama: nama,
         //   umur: umur,
         //   jenisKelamin: jenisKelamin,
         // }
         // tambahPengunjung(newData)
-        updatePassenger({variables: {id: passengerDetails.id, ...state}})
+        passengerDetails
+        ? updatePassenger({variables: {id: passengerDetails.id, ...state}})
+        : addPassenger ({variables: state})
         setState({
           ...state,
           nama: "",

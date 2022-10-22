@@ -10,7 +10,13 @@ const Home = () =>{
     const [getPassengerByID, {data: passengerDetails}] = useLazyQuery(GET_PASSENGER_BY_ID)
 
     const [updatePassenger] = useMutation(UPDATE_PASSENGER)
-      // console.log(data)
+
+    const [addPassenger] = useMutation(ADD_PASSENGER,{
+      refetchQueries:[
+        {query: GET_PASSENGER_LIST}
+      ]
+    })
+
     return(
         <div>
             <Header/>
@@ -22,7 +28,7 @@ const Home = () =>{
             <PassengerInput
                 data={passengerDetails}
                 updatePassenger={updatePassenger}
-                // tambahPengunjung={this.tambahPengunjung}
+                addPassenger={addPassenger}
             />
         </div>
     )
