@@ -1,7 +1,7 @@
 import ListItem from './ListItem';
 import {gql, useQuery} from '@apollo/client'
 
-const ListPassenger = props => {
+const ListPassenger = ({ getPassengerByID, hapusPengunjung}) => {
     
     const GetPassengerList = gql`
     query MyQuery {
@@ -14,6 +14,10 @@ const ListPassenger = props => {
       }
       `;
     
+    const handleEdit = (id) =>{
+        getPassengerByID({ variables: { id: id } });
+    }
+
     const {data, error, loading} = useQuery(GetPassengerList)
 
     return (
@@ -29,7 +33,8 @@ const ListPassenger = props => {
                     <ListItem
                         key={item.id}
                         data={item}
-                        hapusPengunjung={props.hapusPengunjung}
+                        hapusPengunjung={hapusPengunjung}
+                        handleEdit={handleEdit}
                     />
                 ))}
             </table>

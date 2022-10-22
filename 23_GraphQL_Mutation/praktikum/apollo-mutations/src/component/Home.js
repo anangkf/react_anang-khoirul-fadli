@@ -1,82 +1,53 @@
-import { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React from "react";
+import { gql, useLazyQuery, useMutation, useQuery } from "@apollo/client";
 import PassengerInput from './PassengerInput';
 import ListPassenger from './ListPassenger';
 import Header from './Header';
 
-class Home extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data : [
-                {
-                    id: uuidv4(),
-                    nama: 'Yoga',
-                    umur: 22,
-                    jenisKelamin: 'Pria'
-                },
-                {
-                    id: uuidv4(),
-                    nama: 'Ria',
-                    umur: 19,
-                    jenisKelamin: 'Wanita'
-                },
-                {
-                    id: uuidv4(),
-                    nama: 'Fahmi',
-                    umur: 25,
-                    jenisKelamin: 'Pria'
-                },
-                {
-                    id: uuidv4(),
-                    nama: 'Lala',
-                    umur: 21,
-                    jenisKelamin: 'Wanita'
-                },
-                {
-                    id: uuidv4(),
-                    nama: 'Ivan',
-                    umur: 25,
-                    jenisKelamin: 'Pria'
-                }
-            ]
+const Home = () =>{
+    
+    const GET_PASSENGER_BY_ID = gql`
+    query MyQuery($id: uuid!) {
+        results: passengers(where: {id: {_eq: $id}}) {
+          id
+          nama
+          umur
+          jenisKelamin
         }
-    }
+      }
+    `
 
-    hapusPengunjung = id => {
-        this.setState({    
-            data: [      
-                ...this.state.data.filter(item => {        
-                    return item.id !== id;      
-                })    
-            ]  
-        });
-    };
-    
-    tambahPengunjung = newUser => {
-        const newData = {
-            id: uuidv4(),
-            ...newUser
-        }; 
-        this.setState({    
-            data: [...this.state.data, newData]  
-        });
-    };
-    
-    render() {
-        return (
-            <div>
-                <Header/>
-                <ListPassenger 
-                    data={this.state.data}
-                    hapusPengunjung={this.hapusPengunjung}
-                />
-                <PassengerInput
-                    tambahPengunjung={this.tambahPengunjung}
-                />
-            </div>
-        )
+    const UPDATE_PASSENGER = gql`
+    mutation MyMutation($id: uuid!, $jenisKelamin: String , $nama: String, $umur: Int) {
+      results: update_passengers_by_pk(pk_columns: {id: $id}, _set: {jenisKelamin: $jenisKelamin, nama: $nama, umur: $umur}) {
+        id
+        nama
+        umur
+        jenisKelamin
+      }
     }
+    
+    `
+
+    const [getPassengerByID, {data: passengerDetails}] = useLazyQuery(GET_PASSENGER_BY_ID)
+
+    const [updatePassenger] = useMutation(UPDATE_PASSENGER)
+      // console.log(data)
+    return(
+        <div>
+            <Header/>
+            <ListPassenger 
+                getPassengerByID={getPassengerByID}
+                // data={this.state.data}
+                // hapusPengunjung={this.hapusPengunjung}
+            />
+            <PassengerInput
+                data={passengerDetails}
+                updatePassenger={updatePassenger}
+                // tambahPengunjung={this.tambahPengunjung}
+            />
+        </div>
+    )
 }
 
 export default Home;

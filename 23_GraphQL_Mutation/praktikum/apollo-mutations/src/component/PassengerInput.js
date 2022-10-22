@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./Home.css"
 
-function PassengerInput(props) {
+function PassengerInput({data, updatePassenger, tambahPengunjung}) {
+  
+  const passengerDetails = data?.results[0];
+
   const [state, setState] = useState({
     nama: "",
     umur: "",
@@ -16,18 +19,29 @@ function PassengerInput(props) {
     })
   }
 
+  useEffect(() => {
+    passengerDetails && setState({
+      nama: passengerDetails.nama,
+      umur: passengerDetails.umur,
+      jenisKelamin: passengerDetails.jenisKelamin,
+      editing: true,
+    })
+  }, [passengerDetails])
+  
+
   const handleSubmit = (e) => {
     if (state.nama.trim() && state.umur && state.jenisKelamin) {
-      const umur = state.umur
+      const {nama, umur, jenisKelamin} = state
       if (umur >= 75 || umur <= 12) {
         alert("Umur tidak sesuai")
-      } else {
-        const newData = {
-          nama: state.nama,
-          umur: state.umur,
-          jenisKelamin: state.jenisKelamin,
-        }
-        props.tambahPengunjung(newData)
+      } else if(passengerDetails) {
+        // const newData = {
+        //   nama: nama,
+        //   umur: umur,
+        //   jenisKelamin: jenisKelamin,
+        // }
+        // tambahPengunjung(newData)
+        updatePassenger({variables: {id: passengerDetails.id, ...state}})
         setState({
           ...state,
           nama: "",
@@ -39,53 +53,43 @@ function PassengerInput(props) {
       alert("Data masih ada yang kosong")
     }
   }
+  
+  // const handleBukaInput = () => {
+  //   setState({
+  //     ...state,
+  //     editing: false,
+  //   })
+  // }
 
-  const handleBukaInput = () => {
-    setState({
-      ...state,
-      editing: false,
-    })
-  }
-
-  const handleTutupInput = () => {
-    setState({
-      ...state,
-      editing: true,
-    })
-  }
-
-  let viewMode = {}
-  let editMode = {}
-
-  if (state.editing) {
-    viewMode.display = "none"
-  } else {
-    editMode.display = "none"
-  }
+  // const handleTutupInput = () => {
+  //   setState({
+  //     ...state,
+  //     editing: true,
+  //   })
+  // }
 
   return (
     <div>
-      <div onSubmit={handleSubmit} style={viewMode}>
+      <div>
         <p>Masukkan Nama Anda</p>
         <input type="text" className="input-text" placeholder="Nama anda ..." value={state.nama} name="nama" onChange={onChange} />
         <p>Masukkan Umur Anda</p>
         <input type="number" className="input-text" placeholder="Umur anda ..." value={state.umur} name="umur" onChange={onChange} />
         <p>Masukkan Jenis Kelamin Anda</p>
         <select onChange={onChange} name="jenisKelamin">
-          <option value="Pria" selected>
+          <option value="Pria" selected={state.jenisKelamin === 'Pria'}>
             Pria
           </option>
-          <option value="Wanita">Wanita</option>
+          <option value="Wanita" selected={state.jenisKelamin === 'Wanita'}>
+            Wanita
+          </option>
         </select>
         <p></p>
         <button onClick={handleSubmit}>Submit</button>
-        <button onClick={handleTutupInput} style={{ marginLeft: "10px" }}>
+        {/* <button onClick={handleTutupInput} style={{ marginLeft: "10px" }}>
           Selesai
-        </button>
+        </button> */}
       </div>
-      <button className="inputan" onClick={handleBukaInput} style={editMode}>
-        Masukkan Nama Pelanggan
-      </button>
     </div>
   )
 }
