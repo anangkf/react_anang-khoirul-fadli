@@ -35,12 +35,6 @@ function PassengerInput({data, updatePassenger, addPassenger}) {
       if (umur >= 75 || umur <= 12) {
         alert("Umur tidak sesuai")
       } else if(state) {
-        // const newData = {
-        //   nama: nama,
-        //   umur: umur,
-        //   jenisKelamin: jenisKelamin,
-        // }
-        // tambahPengunjung(newData)
         passengerDetails
         ? updatePassenger({variables: {id: passengerDetails.id, ...state}})
         : addPassenger ({variables: state})
@@ -56,20 +50,6 @@ function PassengerInput({data, updatePassenger, addPassenger}) {
     }
   }
   
-  // const handleBukaInput = () => {
-  //   setState({
-  //     ...state,
-  //     editing: false,
-  //   })
-  // }
-
-  // const handleTutupInput = () => {
-  //   setState({
-  //     ...state,
-  //     editing: true,
-  //   })
-  // }
-
   return (
     <div>
       <div>
@@ -88,9 +68,6 @@ function PassengerInput({data, updatePassenger, addPassenger}) {
         </select>
         <p></p>
         <button onClick={handleSubmit}>Submit</button>
-        {/* <button onClick={handleTutupInput} style={{ marginLeft: "10px" }}>
-          Selesai
-        </button> */}
       </div>
     </div>
   )
